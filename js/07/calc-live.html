@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="firstNumber" />
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="number" id="secondNumber" />
+    <div id="divisionResult">
+        Результат:
+    </div>
+    <script>
+        const calcResult = () => {
+            const oper = operator.value
+            const num1 = +firstNumber.value
+            const num2 = +secondNumber.value
+            function calc(operator, num1, num2) {
+                if (operator === "+") {
+                    return num1 + num2;
+                }
+                else if (operator === "-") {
+                    return num1 - num2;
+                }
+                else if (operator === "*") {
+                    return num1 * num2;
+                }
+                else if (operator === "/") {
+                    return num1 / num2;
+                }
+            }
+            let result = calc(oper, num1, num2)
+            divisionResult.innerHTML = `Результат: <b>${result}</b>`
+            console.log(firstNumber.value, operator.value, secondNumber.value, divisionResult.innerHTML)
+        }
+        
+        firstNumber.oninput = operator.oninput = secondNumber.oninput = calcResult
+    </script>
+</body>
+</html>
