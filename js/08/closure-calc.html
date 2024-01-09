@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script>
+        fetch('https://open.er-api.com/v6/latest/USD').then(res => res.json())
+        .then(data => {
+            for (const currency in data.rates) {
+                const button = document.createElement('button');
+                button.innerText = currency;
+                button.onclick = () => {
+                    const amount = +prompt(`Input amount in ${currency}`)
+                    const result = amount / data.rates[currency]
+                    alert(`${result.toFixed(2)} USD`)
+                }
+                container.append(button);
+            }
+        })
+    </script>
+</body>
+</html>

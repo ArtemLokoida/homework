@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="from">From:</label>
+    <select id="from"></select>
+    <label for="to">To:</label>
+    <select id="to"></select>
+    <div id="rate">Rate: 1 USD = 1.00 USD</div>
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount">
+    <div id="result">Result: 0.00 USD</div>
+
+    <script>
+        fetch('https://open.er-api.com/v6/latest/USD').then(res => res.json())
+        .then(data => {
+            for (const currency in data.rates) {
+                const selectOptFrom = document.createElement('option');
+                selectOptFrom.innerText = currency;
+                from.append(selectOptFrom);
+                const selectOptTo = document.createElement('option');
+                selectOptTo.innerText = currency;
+                to.append(selectOptTo);
+            }
+
+            const exchange = () => {
+                const crossRate = 1 / (data.rates[from.value] / data.rates[to.value])
+                const resultAmount = +amount.value / (data.rates[from.value] / data.rates[to.value])
+
+                rate.innerText = `Rate: 1 ${from.value} = ${(crossRate).toFixed(2)} ${to.value}`
+                result.innerText = `Result: ${resultAmount.toFixed(2)} ${to.value}`
+            }
+
+            from.onchange = to.onchange = amount.oninput = exchange;
+        })
+    </script>
+</body>
+</html>
