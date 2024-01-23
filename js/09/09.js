@@ -64,7 +64,7 @@
     const length = 5
     let chessLine = ""
     for (let i = 0; i < length; i++) {
-        chessLine += "#"
+        chessLine += (i % 2 === 0) ? "#" : "."
     }
     console.log(chessLine)
 }
