@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кіоск</title>
+    
+</head>
+<body>
+    <h1>Кіоск</h1>
+    <div>
+        <label for="productSelect">Виберіть товар:</label>
+        <select id="productSelect">
+          <option id="product1" value="пиво">Пиво</option>
+          <option id="product2" value="чіпси">Чіпси</option>
+          <option id="product3" value="сіги">Сігарети</option>
+        </select>
+      </div>
+      <div>
+        <label for="amountInput">Введіть кількість:</label>
+        <input type="number" id="amountInput">
+      </div>
+      <div>
+        <label for="amountInput">Скільки грошей даєте?</label>
+        <input type="number" id="moneyInput">
+      </div>
+      <div>
+        <button id="buyButton">Купити</button>
+      </div>
+    
+      <div>
+        <p id="cash">Каса: 0 грн.</p>
+      </div>
+      <div>
+        <h3>В наявності:</h3>
+        <ul id="productsList"></ul>
+      </div>
+
+<script src="./12.js"></script>
+</body>
+</html>
