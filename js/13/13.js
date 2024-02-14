@@ -363,11 +363,11 @@
     passwordVerifyInput.oninput = password.onChange = function(){
         if (passwordVerifyInput.value !== password.getValue()){
             password.setStyle("border: solid 1px red")
-            passwordVerifyInput.style = "border: solid 1px red"
+            passwordVerifyInput.style.border = "solid 1px red"
         }
         else{
             password.setStyle("")
-            passwordVerifyInput.style = ""
+            passwordVerifyInput.style.border = ""
         }
     }
 }
