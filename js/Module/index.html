@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>GQL</title>
+        <meta charset="utf-8"/>
+        <style>
+            #mainContainer {
+                display: flex;
+            }
+            #aside {
+                width: 30%;
+            }
+            #aside > a{
+                display: block;
+            }
+            header {
+                min-height: 100px;
+                background-color: #AAA;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 2em;
+            }
+            #nick, #cartIcon{
+                font-weight: bold;
+                display: block;
+            }
+            input[type="number"]::-webkit-outer-spin-button,
+            input[type="number"]::-webkit-inner-spin-button {
+                -webkit-appearance: none; 
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <div id="userDiv">
+                <a id="nick">Користувач: Anon</a>
+                <a id="historyLink" href="#/history/">Історія замовлень</a>
+            </div>
+            <div id="registerLink"><a href="#/register/">Реєстрація</a></div>
+            <div id="loginLink"><a href="#/login/">Увійти</a></div>
+            <div id="logoutLink"><a href="#/logout/">Вийти</a></div>
+            <div>
+                <a id="cartIcon">Кошик: 0</a>
+                <a href="#/cart/">Оформити замовлення</a>
+            </div>
+        </header>
+        <div id="mainContainer">
+            <aside id="aside">
+                Категории
+                Сюда надо воткнуть список корневых категорий интернет-магазина
+            </aside>
+            <main id="main">
+                Контент
+            </main>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
